@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.venv*/
+pip-wheel-metadata/
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+*.sqlite3
+media/
+staticfiles/
+static/
+*.log
+
+# Unit test / coverage
+.coverage
+.coverage.*
+.pytest_cache/
+coverage.xml
+htmlcov/
+.cache/
+
+# Type checkers / linters
+.mypy_cache/
+.ruff_cache/
+.pytype/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+
+

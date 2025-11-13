@@ -1,0 +1,22 @@
+<div class="row g-3 align-items-end participante-form mb-2">
+	<div class="col-md-5">
+		<label class="form-label" for="{{ form.nombre.id_for_label }}">Nombre del Participante</label>
+		{{ form.nombre }}
+		{% if form.nombre.errors %}
+			<div class="text-danger small mt-1">
+				{{ form.nombre.errors|striptags }}
+			</div>
+		{% endif %}
+	</div>
+	<div class="col-md-5">
+		<label class="form-label" for="{{ form.email.id_for_label }}">Correo Electrónico</label>
+		{{ form.email }}
+		{% if form.email.errors %}
+			<div class="text-danger small mt-1">
+				{{ form.email.errors|striptags }}
+			</div>
+		{% endif %}
+	</div>
+</div>
+
+

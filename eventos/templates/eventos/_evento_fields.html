@@ -1,0 +1,29 @@
+<div class="mb-3">
+	<label class="form-label" for="{{ evento_form.nombre.id_for_label }}">Nombre del Evento</label>
+	{{ evento_form.nombre }}
+	{% if evento_form.nombre.errors %}
+		<div class="text-danger small mt-1">
+			{{ evento_form.nombre.errors|striptags }}
+		</div>
+	{% endif %}
+</div>
+<div class="mb-3">
+	<label class="form-label" for="{{ evento_form.fecha.id_for_label }}">Fecha</label>
+	{{ evento_form.fecha }}
+	{% if evento_form.fecha.errors %}
+		<div class="text-danger small mt-1">
+			{{ evento_form.fecha.errors|striptags }}
+		</div>
+	{% endif %}
+</div>
+<div class="mb-3">
+	<label class="form-label" for="{{ evento_form.ubicacion.id_for_label }}">Ubicación (opcional)</label>
+	{{ evento_form.ubicacion }}
+	{% if evento_form.ubicacion.errors %}
+		<div class="text-danger small mt-1">
+			{{ evento_form.ubicacion.errors|striptags }}
+		</div>
+	{% endif %}
+</div>
+
+

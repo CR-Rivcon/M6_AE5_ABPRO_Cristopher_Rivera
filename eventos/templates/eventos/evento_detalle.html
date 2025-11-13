@@ -20,8 +20,10 @@
 	{% endfor %}
 </ul>
 
-{% if request.user.has_perm('eventos.change_evento') and (request.user.is_superuser or evento.organizador_id == request.user.id) %}
-	<a href="{% url 'eventos_editar' evento.pk %}" class="btn btn-outline-secondary">Editar</a>
+{% if perms.eventos.change_evento %}
+	{% if request.user.is_superuser or evento.organizador_id == request.user.id %}
+		<a href="{% url 'eventos_editar' evento.pk %}" class="btn btn-outline-secondary">Editar</a>
+	{% endif %}
 {% endif %}
 {% endblock %}
 

@@ -5,7 +5,7 @@
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-3">
 	<h1 class="h3 mb-0">Eventos</h1>
-	{% if request.user.has_perm('eventos.add_evento') %}
+	{% if perms.eventos.add_evento %}
 		<a href="{% url 'eventos_crear' %}" class="btn btn-primary">Nuevo evento</a>
 	{% endif %}
 	</div>
@@ -29,8 +29,10 @@
 				<td>{{ e.ubicacion|default:"-" }}</td>
 				<td>{% if e.es_privado %}Sí{% else %}No{% endif %}</td>
 				<td class="text-end">
-					{% if request.user.has_perm('eventos.change_evento') and (request.user.is_superuser or e.organizador_id == request.user.id) %}
-						<a href="{% url 'eventos_editar' e.pk %}" class="btn btn-sm btn-outline-secondary">Editar</a>
+					{% if perms.eventos.change_evento %}
+						{% if request.user.is_superuser or e.organizador_id == request.user.id %}
+							<a href="{% url 'eventos_editar' e.pk %}" class="btn btn-sm btn-outline-secondary">Editar</a>
+						{% endif %}
 					{% endif %}
 				</td>
 			</tr>

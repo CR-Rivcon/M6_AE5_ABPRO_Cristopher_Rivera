@@ -49,7 +49,7 @@ class EventoDetalleView(LoginRequiredMixin, DetailView):
 
 class EventoCrearView(LoginRequiredMixin, PermissionRequiredMixin, View):
 	permission_required = "eventos.add_evento"
-	raise_exception = True
+	raise_exception = False
 
 	def handle_no_permission(self):
 		if self.request.user.is_authenticated:
@@ -78,7 +78,7 @@ class EventoCrearView(LoginRequiredMixin, PermissionRequiredMixin, View):
 
 class EventoEditarView(LoginRequiredMixin, PermissionRequiredMixin, View):
 	permission_required = "eventos.change_evento"
-	raise_exception = True
+	raise_exception = False
 
 	def handle_no_permission(self):
 		if self.request.user.is_authenticated:

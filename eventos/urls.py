@@ -10,6 +10,7 @@ from .views import (
 
 urlpatterns = [
 	path("", EventoListaView.as_view(), name="eventos_lista"),
+	path("eventos/", EventoListaView.as_view(), name="eventos_lista_alias"),
 	path("eventos/nuevo/", EventoCrearView.as_view(), name="eventos_crear"),
 	path("eventos/<int:pk>/", EventoDetalleView.as_view(), name="eventos_detalle"),
 	path("eventos/<int:pk>/editar/", EventoEditarView.as_view(), name="eventos_editar"),

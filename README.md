@@ -47,3 +47,4 @@ Panel de administración: `http://127.0.0.1:8000/admin/`
 - Para cambiar el idioma a español ya está configurado en `settings.py`.
 
 
+# M6_AE5_ABPRO_Cristopher_Rivera

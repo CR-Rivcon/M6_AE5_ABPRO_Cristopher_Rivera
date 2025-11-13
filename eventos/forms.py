@@ -8,7 +8,7 @@ from .models import Evento, Participante
 class EventoForm(forms.ModelForm):
 	class Meta:
 		model = Evento
-		fields = ["nombre", "fecha", "ubicacion"]
+		fields = ["nombre", "fecha", "ubicacion", "es_privado"]
 		widgets = {
 			"fecha": forms.DateInput(attrs={"type": "date"}),
 		}
@@ -23,7 +23,7 @@ class EventoForm(forms.ModelForm):
 class ParticipanteForm(forms.ModelForm):
 	class Meta:
 		model = Participante
-		fields = ["nombre", "email"]
+		fields = ["nombre", "email", "usuario"]
 
 
 ParticipanteFormSet = inlineformset_factory(
